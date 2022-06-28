@@ -24,17 +24,12 @@ export function createApiRouteCreator<Context>(args: CreateApiRouteCreatorArgs<C
     return async function handler(req: Req, res: Res) {
       try {
         // Get all global and local middleware
-        console.log("Running middleware");
         const middleware = [...(args.middleware ?? []), ...(options.middleware ?? [])];
 
         // Run each middleware in sequence
-        let mws = 1;
         for await (const mw of middleware) {
-          console.log("Running middleware:", mws);
           await mw(req, res);
-          console.log("Ran middleware:", mws++);
         }
-        console.log("Ran middleware");
 
         // Create the context object
         const context = args.createContext(req, res);

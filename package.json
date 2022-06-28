@@ -7,6 +7,13 @@
   "files": [
     "lib/**/*"
   ],
+  "keywords": [
+    "Next.js",
+    "Api",
+    "Route",
+    "createApiRoute"
+  ],
+  "author": "Jussi Nevavuori",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
@@ -22,9 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/Jussinevavuori/create-next-api-route.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "GNU3",
   "bugs": {
     "url": "https://github.com/Jussinevavuori/create-next-api-route/issues"
   },
