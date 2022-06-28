@@ -110,24 +110,24 @@ type Res = NextApiResponse;
  */
 createApiRouteCreator<Context>({
 
-	/**
-	 * Create any global context object for requests to access
-	 */
+  /**
+   * Create any global context object for requests to access
+   */
   createContext(req: Req, res: Res): Context;
 
-	/**
-	 * Create any handler to handle requests to unimplemented methods
-	 */
+  /**
+   * Create any handler to handle requests to unimplemented methods
+   */
   unimplementedMethod: (req: Req, res: Res, ctx: Context) => any;
 
-	/**
-	 * List all global middleware functions
-	 */
+  /**
+   * List all global middleware functions
+   */
   middleware?: Array<(req: Req, res: Res) => Promise<void>>;
 
-	/**
-	 * Create a handler to handle all thrown errors
-	 */
+  /**
+   * Create a handler to handle all thrown errors
+   */
   handleError?: (req: Req, res: Res, error: unknown) => void;
 })
 ```
@@ -148,18 +148,18 @@ const createApiRoute = createApiRouteCreator({ /* ... */ })
  * Returns the route handler function which should be exported as default
  */
 export default createApiRoute<Context>({
-	/**
-	 * All handlers for different methods
-	 */
+  /**
+   * All handlers for different methods
+   */
   get?: (req: Req, res: Res, ctx: Context) => any;
   post?: (req: Req, res: Res, ctx: Context) => any;
   put?: (req: Req, res: Res, ctx: Context) => any;
   patch?: (req: Req, res: Res, ctx: Context) => any;
-	delete?: (req: Req, res: Res, ctx: Context) => any;
+  delete?: (req: Req, res: Res, ctx: Context) => any;
 
-	/**
-	 * All local middleware which will run only on this route
-	 */
+  /**
+   * All local middleware which will run only on this route
+   */
   middleware?: Array<(req: Req, res: Res) => Promise<void>>;
 })
 ```
@@ -170,7 +170,7 @@ export default createApiRoute<Context>({
 
 const someExpressMiddleware = (req: Request, res: Response: next: Function) => {
   // ...
-	if (somethingWrong) next(new Error("Failed"))
+  if (somethingWrong) next(new Error("Failed"))
   else next();
 }
 
@@ -191,7 +191,7 @@ await usableMiddleware(req as NextApiRequest, res as NextApiResponse);
  * Or in `createApiRoute` and `createApiRouteCreator`
  */
 export default createApiRoute({
-	/* ... */,
-	middleware: [usableMiddleware]
+  /* ... */,
+  middleware: [usableMiddleware]
 })
 ````
