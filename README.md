@@ -98,7 +98,7 @@ export default createApiRoute({
 
 # Documentation
 
-## `createApiRouteCreator``
+## `createApiRouteCreator`
 
 ```typescript
 type Req = NextApiRequest;
@@ -164,7 +164,7 @@ export default createApiRoute<Context>({
 })
 ```
 
-## `initMiddleware``
+## `initMiddleware`
 
 ````typescript
 
