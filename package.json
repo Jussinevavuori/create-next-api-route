@@ -1,7 +1,7 @@
 {
   "name": "create-next-api-route",
   "description": "A beautiful abstraction on top of the Next.js API routes API, which allows for local and global middleware, better syntax, error handling, context objects.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
